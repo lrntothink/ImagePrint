@@ -1,0 +1,26 @@
+HKCR
+{
+	ImagePrint.EventSink.1 = s 'EventSink Class'
+	{
+		CLSID = s '{86124585-90FD-4033-8883-0B24B1A46CB6}'
+	}
+	ImagePrint.EventSink = s 'EventSink Class'
+	{
+		CLSID = s '{86124585-90FD-4033-8883-0B24B1A46CB6}'
+		CurVer = s 'ImagePrint.EventSink.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {86124585-90FD-4033-8883-0B24B1A46CB6} = s 'EventSink Class'
+		{
+			ProgID = s 'ImagePrint.EventSink.1'
+			VersionIndependentProgID = s 'ImagePrint.EventSink'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{AAAE4D18-90C8-4CCB-935F-7878BF9A3F23}'
+		}
+	}
+}

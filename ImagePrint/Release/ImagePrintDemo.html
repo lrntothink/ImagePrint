@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片打印demo</title>
+<script language="javascript">
+function test(){
+	var url = document.getElementById("url").value;
+	if(url==null || url =="")
+	{
+		alert("请输入网址");
+	}
+	document.getElementById("WebBrowser").imagePrint(url);
+}
+</script>
+</head>
+
+<body>
+<object  id="WebBrowser" name="WebBrowser"  width=0  height=0  classid="CLSID:86124585-90FD-4033-8883-0B24B1A46CB6" codebase="ImagePrint.dll#version=1,0,0,1">    
+</object>    
+网址：<input type="text" size="48" id="url" value="http://news.baidu.com/" /><br />
+<input type="button" value="打印" onclick="test()" />
+</body>
+</html>

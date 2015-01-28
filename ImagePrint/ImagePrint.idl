@@ -1,0 +1,47 @@
+// ImagePrint.idl : ImagePrint 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(ImagePrint.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(2A0D436B-2C48-445C-8F1B-E5B520329A0E),
+	dual,
+	nonextensible,
+	helpstring("IEventSink 接口"),
+	pointer_default(unique)
+]
+interface IEventSink : IDispatch{
+	[id(1), helpstring("方法imagePrint")] HRESULT imagePrint([in] BSTR url);
+};
+[
+	uuid(AAAE4D18-90C8-4CCB-935F-7878BF9A3F23),
+	version(1.0),
+	helpstring("ImagePrint 1.0 类型库")
+]
+library ImagePrintLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(D2D9DBB6-A34F-4C2D-963B-3AC44BD9CFD7),
+		helpstring("_IEventSinkEvents 接口")
+	]
+	dispinterface _IEventSinkEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(86124585-90FD-4033-8883-0B24B1A46CB6),
+		helpstring("EventSink Class")
+	]
+	coclass EventSink
+	{
+		[default] interface IEventSink;
+		[default, source] dispinterface _IEventSinkEvents;
+	};
+};
